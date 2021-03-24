@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './index.scss'
 const Index = () =>{
     return(
@@ -7,4 +8,13 @@ const Index = () =>{
         </div>
     )
 }
-export default Index
+const MapStateToProps = (state) => {
+    return{
+        
+    }
+}
+const MapDispatchToProps = {
+
+}
+
+export default connect(MapStateToProps,MapDispatchToProps)(Index)
