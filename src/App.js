@@ -1,10 +1,23 @@
 import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import Index from './pages/index/index'
+import {BrowserRouter,Switch,Route,Redirect} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <BrowserRouter>
+        <Switch>
+          <Route path="/Index" component={Index} />
+          <Redirect from="/" to="/Index"/>
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
+/*
+ <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,9 +30,4 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+      </header> */
