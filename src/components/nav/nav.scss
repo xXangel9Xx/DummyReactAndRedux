@@ -1,0 +1,15 @@
+@import '../../master';
+@media screen and (min-width:300px){
+    
+    .container-nav{
+        text-align: center;
+        height: 5vh;
+        padding-top: 2.5vh;
+        border-bottom: white solid 2px;    
+    }
+    .text-dummy-nav{
+        color: $color-text;
+        font-family: Garamond, serif;
+        margin: 0%;
+    }
+}

@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import Nav from '../../components/nav/nav'
 import getUserIndex from '../../redux/action/getUser/getUsersIndexAction'
 import './index.scss'
 const Index = (props) =>{
-    useEffect(()=>{
+    /*useEffect(()=>{
         props.dispatch(props.getUserIndex('https://dummyapi.io/data/api/user?page=1&limit=20'))
-    },[])
+    },[])*/
     return(
         <div className="container-page-index">
-            
+            <Nav />
         </div>
     )
 }

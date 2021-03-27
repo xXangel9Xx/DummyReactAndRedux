@@ -3,7 +3,7 @@ import './nav.scss'
 const Nav = (props) => {
     return(
         <div className="container-nav">
-
+            <p className="text-dummy-nav">Dummy.io</p>
         </div>
     )
 }
