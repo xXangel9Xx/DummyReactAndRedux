@@ -1,3 +1,4 @@
+import { APP_ID } from '../../../app-id/appId'
 import {  
     GET_USERINDEX_REQUEST,
     GET_USERSINDEX_SUCCES,
@@ -28,7 +29,7 @@ const fetchError = (error) => {
 function getIndex(url){
     return(dispatch)=>{
         dispatch(fetchUsersIndex())
-        axios.get(url).then((res)=>{
+        axios.get(url,{headers:{'app-id': APP_ID}}).then((res)=>{
             const users = res.data
             dispatch(fetchSucces(users))
         }).catch((error)=>{
