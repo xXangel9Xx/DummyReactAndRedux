@@ -18,7 +18,7 @@ const reducer = (state=defaultState,{type,payload}) => {
             return{
                 ...state,
                 loading: false,
-                users:payload
+                users:payload.data
             }
         case GET_USERSINDEX_ERROR:
             return{
