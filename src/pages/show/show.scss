@@ -1,0 +1,9 @@
+@import '../../master';
+@media screen and (min-width:300px){
+    .container-page-show{
+        height: 100vh;
+        width: 100vw;
+        background: $color-pages;
+        background: $color-pages-linear-gradient;
+    }
+}

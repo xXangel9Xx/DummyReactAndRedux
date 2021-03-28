@@ -1,0 +1,32 @@
+@media screen and (min-width:300px){
+    .letters{
+        width: 220px;
+        border-style: outset;
+        margin-right: 10px;
+        margin-top: 10px;
+        color: black;
+    }
+    .letters:hover{
+        background-color: #C4C4C4C4;
+        width: 230px;
+    }
+
+    .container-full-name{
+        display: flex;
+        justify-content: space-around;
+    }    
+    .index-image-user{
+        height: 50px;
+        border-radius: 45%;
+    }
+    .name{
+        display: flex;
+        align-items: center;
+    }
+    .data-user{
+        text-align: center;
+    }
+    .data{
+        word-break: break-all; //adapta el texto
+    }
+}

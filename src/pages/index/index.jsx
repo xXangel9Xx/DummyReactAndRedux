@@ -7,7 +7,7 @@ import getUserIndex from '../../redux/action/getUser/getUsersIndexAction'
 import './index.scss'
 const Index = (props) =>{
     useEffect(()=>{
-        props.dispatch(props.getUserIndex('https://dummyapi.io/data/api/user?page=1&limit=20'))
+        props.dispatch(props.getUserIndex('https://dummyapi.io/data/api/user?page=1&limit=10'))
     },[])
     return(
         <div className="container-page-index">
@@ -15,7 +15,15 @@ const Index = (props) =>{
             <div className="container-index">
                 <div className="container-users">
                     <div className="container-scroll">
-  
+                        {props.userIndex.loading == false? 
+                        props.userIndex.users.data.map((user,i)=>
+                            <a href={'/User/'+user.id} key={i} className="link-user-show">
+                                <Letters 
+                                    user={user}
+                                />
+                            </a>
+                        ):
+                        <Loading />}
                     </div>
                 </div>
             </div>
@@ -40,5 +48,5 @@ export default connect(MapStateToProps,MapDispatchToProps)(Index)
  <div className="container-users">
 
             </div>
-                {props.userIndex.loading == false? props.userIndex.users.map((users,i)=><Letters key={i}/>):<Loading />}
+                
                  */
