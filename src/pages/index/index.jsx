@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Letters from '../../components/letters/letters';
 import Loading from '../../components/loading/loading';
 import Nav from '../../components/nav/nav'
-import getUserIndex from '../../redux/action/getUser/getUsersIndexAction'
+import getUserIndex from '../../redux/action/getUsers/getUsersIndexAction'
 import './index.scss'
 const Index = (props) =>{
     useEffect(()=>{
@@ -16,7 +16,7 @@ const Index = (props) =>{
                 <div className="container-users">
                     <div className="container-scroll">
                         {props.userIndex.loading == false? 
-                        props.userIndex.users.data.map((user,i)=>
+                        props.userIndex.users.map((user,i)=>
                             <a href={'/User/'+user.id} key={i} className="link-user-show">
                                 <Letters 
                                     user={user}
@@ -43,10 +43,3 @@ const MapDispatchToProps = (dispatch)=>{
 }
 
 export default connect(MapStateToProps,MapDispatchToProps)(Index)
-/*
-
- <div className="container-users">
-
-            </div>
-                
-                 */

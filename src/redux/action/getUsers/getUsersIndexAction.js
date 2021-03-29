@@ -30,8 +30,8 @@ function getIndex(url){
     return(dispatch)=>{
         dispatch(fetchUsersIndex())
         axios.get(url,{headers:{'app-id': APP_ID}}).then((res)=>{
-            const users = res
-            dispatch(fetchSucces(users))
+            const USERS = res
+            dispatch(fetchSucces(USERS))
         }).catch((error)=>{
             dispatch(fetchError(error))
         })        

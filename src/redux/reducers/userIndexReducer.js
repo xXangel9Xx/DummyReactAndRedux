@@ -2,7 +2,7 @@ import {
     GET_USERINDEX_REQUEST,
     GET_USERSINDEX_SUCCES,
     GET_USERSINDEX_ERROR
-} from '../action/getUser/types';
+} from '../action/getUsers/types';
 const defaultState = {
     users:[],
     loading:true,
@@ -18,7 +18,7 @@ const reducer = (state=defaultState,{type,payload}) => {
             return{
                 ...state,
                 loading: false,
-                users:payload.data
+                users:payload.data.data
             }
         case GET_USERSINDEX_ERROR:
             return{

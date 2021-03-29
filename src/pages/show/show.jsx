@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import './show.scss';
 import Nav from '../../components/nav/nav'
+import getShowUser from '../../redux/action/getShowUser/showUserAction'
+import { connect } from 'react-redux';
 const Show = (props) => {
     useEffect(()=>{
         let id = window.location.href? window.location.href.split('/').pop():document.location.href.split('/').pop()
-
-        console.log(id)
+        props.dispatch(getShowUser(`https://dummyapi.io/data/api/user/${id}`))
     },[])
     return (
             <div className="container-page-show">
@@ -13,4 +14,16 @@ const Show = (props) => {
             </div>
         )
 }
-export default Show
+const MapStateToProps = (state)=>{
+    return{
+        userShow:state.userShow
+    }
+}
+
+const MapDispatchToProps = (dispatch) => {
+    return{
+        dispatch,
+        getShowUser
+    }
+}
+export default connect(MapStateToProps,MapDispatchToProps)(Show)
