@@ -5,7 +5,8 @@ import getShowUser from '../../redux/action/getShowUser/showUserAction'
 import { connect } from 'react-redux';
 const Show = (props) => {
     useEffect(()=>{
-        let id = window.location.href? window.location.href.split('/').pop():document.location.href.split('/').pop()
+        let id
+        window.location.href? id = window.location.href.split('/').pop(): id = document.location.href.split('/').pop()
         props.dispatch(getShowUser(`https://dummyapi.io/data/api/user/${id}`))
     },[])
     return (
