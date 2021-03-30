@@ -3,6 +3,7 @@ import './show.scss';
 import Nav from '../../components/nav/nav'
 import getShowUser from '../../redux/action/getShowUser/showUserAction'
 import { connect } from 'react-redux';
+import DataPerfil from '../../components/dataPerfil/dataPerfil';
 const Show = (props) => {
     useEffect(()=>{
         let id
@@ -15,7 +16,14 @@ const Show = (props) => {
                 <div className="container-show-data">
                     <div className="container-user-data">
                         <div className="container-scroll">
+                                {props.userShow.loading == false?
+                                    <DataPerfil 
+                                        user={props.userShow.user}
+                                    />:
+                                    <div className="container-loading">
 
+                                    </div>
+                                }
                         </div>
                     </div>                    
                 </div>

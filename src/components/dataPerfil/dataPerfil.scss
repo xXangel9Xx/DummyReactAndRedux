@@ -1,0 +1,13 @@
+@media screen and (min-width:300px){
+    .container-image-perfil{
+        display: flex;
+        justify-content: center;
+        margin-top: 11px;
+    }
+    .container-details{
+        text-align: center;
+    }
+    .details{
+        word-break: break-all;
+    }
+}
