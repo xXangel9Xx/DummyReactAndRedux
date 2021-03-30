@@ -22,11 +22,20 @@
         overflow: hidden;
     }
     .container-scroll{
-        display: flex;
         justify-content: center;
         height: 70vh;
         width: 80vw;
         padding-right: 3vw;
         overflow-y: scroll;
     }
+
+    .scroll-show{
+        display: block !important;
+    }
+    .container-pots{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
 }

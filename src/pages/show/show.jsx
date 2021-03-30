@@ -5,6 +5,7 @@ import getShowUser from '../../redux/action/getShowUser/showUserAction'
 import { connect } from 'react-redux';
 import DataPerfil from '../../components/dataPerfil/dataPerfil';
 import getPosts from '../../redux/action/pots/potsAction'
+import Pots from '../../components/pots/pots';
 const Show = (props) => {
     useEffect(()=>{
         let id
@@ -17,11 +18,34 @@ const Show = (props) => {
                 <Nav />
                 <div className="container-show-data">
                     <div className="container-user-data">
-                        <div className="container-scroll">
+                        <div className="container-scroll scroll-show">
                                 {props.userShow.loading == false?
+                                <>
                                     <DataPerfil 
                                         user={props.userShow.user}
-                                    />:
+
+                                    />
+                                    
+                                    {props.postsUser.loading==false?
+                                        <div className="container-pots">  
+                                            {props.postsUser.pots.map((pots)=>
+                                                <Pots
+                                                pots={pots}
+                                                />                                        
+                                            )
+                                       
+                                            }
+                                        </div>
+                                    :
+                                    
+                                    <div className="container-loading">
+
+                                    </div>
+                                    }
+                                    
+                                </>
+                                    :
+                                    
                                     <div className="container-loading">
 
                                     </div>
@@ -35,7 +59,8 @@ const Show = (props) => {
 }
 const MapStateToProps = (state)=>{
     return{
-        userShow:state.userShow
+        userShow:state.userShow,
+        postsUser:state.postsUser
     }
 }
 
@@ -46,4 +71,5 @@ const MapDispatchToProps = (dispatch) => {
         getPosts,
     }
 }
-export default connect(MapStateToProps,MapDispatchToProps)(Show)
+export default connect(MapStateToProps,MapDispatchToProps)(Show)        /*
+*/

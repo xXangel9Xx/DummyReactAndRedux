@@ -1,0 +1,26 @@
+@media screen and (min-width:300px){
+    .pots{
+        margin-top: 20px;
+        width: 230px;
+        padding: 5px;
+        border-radius: 8px;
+        border-style: outset;
+    }
+    .container-image-pots{
+        display: flex;
+        justify-content: center;
+    }
+    .image-pots{
+        width: 200px;
+        height: 150px;
+    }
+    .text-data{
+        text-align: center;
+    }
+
+}
+@media screen and (min-width:600px){
+    .pots{
+        margin-right: 10px;
+    }
+}

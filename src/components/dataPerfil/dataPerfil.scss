@@ -12,7 +12,21 @@
         background: rgb(226,226,226);
         background: radial-gradient(circle, rgba(226,226,226,1) 0%, rgba(255,255,255,1) 100%);
     }
+    .container-data-perfil{
+        width: 230px;
+        margin: auto;
+    }
     .details{
         word-break: break-all;
+    }
+}
+@media screen and (min-width:350px){
+    .container-data-perfil{
+        width: 250px;
+    }
+}
+@media screen and (min-width:400px){
+        .container-data-perfil{
+        width: 300px;
     }
 }

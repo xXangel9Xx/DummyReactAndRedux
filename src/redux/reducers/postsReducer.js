@@ -3,7 +3,7 @@ import {GET_POST_REQUEST,
         GET_POST_ERROR  } from '../action/pots/type';
 const stateDefault = {
     loading:true,
-    posts:[],
+    pots:[],
     error:''
 }
 const reducer = (state=stateDefault,{type,payload}) =>{
@@ -15,13 +15,13 @@ const reducer = (state=stateDefault,{type,payload}) =>{
         case GET_POST_SUCCES:
             return{
                 loading:false,
-                posts:payload,
+                pots:payload.data.data,
                 error:''
             }
         case GET_POST_ERROR:    
             return{
                 loading:false,
-                posts:[],
+                pots:[],
                 error:payload
             }
         default:return state
