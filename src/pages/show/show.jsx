@@ -4,11 +4,13 @@ import Nav from '../../components/nav/nav'
 import getShowUser from '../../redux/action/getShowUser/showUserAction'
 import { connect } from 'react-redux';
 import DataPerfil from '../../components/dataPerfil/dataPerfil';
+import getPosts from '../../redux/action/pots/potsAction'
 const Show = (props) => {
     useEffect(()=>{
         let id
         window.location.href? id = window.location.href.split('/').pop(): id = document.location.href.split('/').pop()
         props.dispatch(getShowUser(`https://dummyapi.io/data/api/user/${id}`))
+        props.dispatch(getPosts(`https://dummyapi.io/data/api/user/${id}/post`))
     },[])
     return (
             <div className="container-page-show">
@@ -40,7 +42,8 @@ const MapStateToProps = (state)=>{
 const MapDispatchToProps = (dispatch) => {
     return{
         dispatch,
-        getShowUser
+        getShowUser,
+        getPosts,
     }
 }
 export default connect(MapStateToProps,MapDispatchToProps)(Show)

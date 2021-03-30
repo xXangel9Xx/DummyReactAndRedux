@@ -3,12 +3,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import userIndex from './reducers/userIndexReducer';
 import showMenu from './reducers/menuReducer';
 import userShow from './reducers/showUserReducer';
+import postsUser from './reducers/postsReducer';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 const reducer = combineReducers({
     userIndex,
     showMenu,
-    userShow
+    userShow,
+    postsUser
 })
 
 const store = createStore(
