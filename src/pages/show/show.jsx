@@ -12,6 +12,14 @@ const Show = (props) => {
     return (
             <div className="container-page-show">
                 <Nav />
+                <div className="container-show-data">
+                    <div className="container-user-data">
+                        <div className="container-scroll">
+
+                        </div>
+                    </div>                    
+                </div>
+
             </div>
         )
 }

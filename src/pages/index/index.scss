@@ -15,9 +15,9 @@
     .container-users{
         width: 80vw;
         height: 80vh;
-        background: #FFFFFF;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
-        border-radius: 8px;
+        background: $background-container;
+        box-shadow: $box-shadow-container;
+        border-radius: $border-radius;
         overflow: hidden;
     }
     .container-scroll{

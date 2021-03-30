@@ -6,4 +6,27 @@
         background: $color-pages;
         background: $color-pages-linear-gradient;
     }
+
+    .container-show-data{
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        padding-top: 5vh;
+    }
+    .container-user-data{
+        width: 80vw;
+        height: 80vh;
+        background: $background-container;
+        box-shadow: $box-shadow-container;
+        border-radius: $border-radius;
+        overflow: hidden;
+    }
+    .container-scroll{
+        display: flex;
+        justify-content: center;
+        height: 70vh;
+        width: 80vw;
+        padding-right: 3vw;
+        overflow-y: scroll;
+    }
 }
