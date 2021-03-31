@@ -1,8 +1,8 @@
 import {    SHOW_MENU, SHOW_MENU_FALSE   }
  from '../action/menu/types';
-const defaultState = false;
+const STATEDEFAULT = false;
 
-const reducer = (state=defaultState,{type,payload}) => {
+const reducer = (state=STATEDEFAULT,{type,payload}) => {
     switch (type) {
         case SHOW_MENU:
             return payload

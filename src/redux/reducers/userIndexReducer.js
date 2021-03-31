@@ -3,12 +3,12 @@ import {
     GET_USERSINDEX_SUCCES,
     GET_USERSINDEX_ERROR
 } from '../action/getUsers/types';
-const defaultState = {
+const STATEDEFAULT = {
     users:[],
     loading:true,
     error:""
 };
-const reducer = (state=defaultState,{type,payload}) => {
+const reducer = (state=STATEDEFAULT,{type,payload}) => {
     switch (type) {
         case GET_USERINDEX_REQUEST:
             return{

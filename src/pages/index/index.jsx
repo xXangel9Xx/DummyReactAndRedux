@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Letters from '../../components/letters/letters';
 import Loading from '../../components/loading/loading';
-import Nav from '../../components/nav/nav'
 import getUserIndex from '../../redux/action/getUsers/getUsersIndexAction'
 import './index.scss'
 const Index = (props) =>{
@@ -11,7 +10,6 @@ const Index = (props) =>{
     },[])
     return(
         <div className="container-page-index">
-            <Nav />
             <div className="container-index">
                 <div className="container-users">
                     <div className="container-scroll">

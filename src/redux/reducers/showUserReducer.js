@@ -1,12 +1,12 @@
 import {GET_USER_SUCCES,
         GET_USER_REQUEST,
         GET_USER_ERROR} from '../action/getShowUser/types';
-const stateDefault = {
+const STATEDEFAULT = {
     loading:true,
     user:{},
     error:''
 };
-const reducer = (state=stateDefault,{type,payload})=>{
+const reducer = (state=STATEDEFAULT,{type,payload})=>{
     switch (type) {
         case GET_USER_REQUEST:
             return {

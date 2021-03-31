@@ -1,28 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import './show.scss';
-import Nav from '../../components/nav/nav'
 import DataPerfil from '../../components/dataPerfil/dataPerfil';
+import Pots from '../../components/pots/pots';
 import { connect } from 'react-redux';
 //REDUX FUNCTIONS ACTION
 import getShowUser from '../../redux/action/getShowUser/showUserAction';
 import getPosts from '../../redux/action/pots/potsAction';
+import getIdUser from '../../redux/action/idUser/idUserAction'
 
-
-
-
-
-
-import Pots from '../../components/pots/pots';
 const Show = (props) => {
+    function doBeforeGetId(id){
+            props.dispatch(props.getIdUser(id))
+            props.dispatch(props.getShowUser(`https://dummyapi.io/data/api/user/${id}`))
+            props.dispatch(props.getPosts(`https://dummyapi.io/data/api/user/${id}/post`))   
+    }
     useEffect(()=>{
-        let id
-        window.location.href? id = window.location.href.split('/').pop(): id = document.location.href.split('/').pop()
-        props.dispatch(props.getShowUser(`https://dummyapi.io/data/api/user/${id}`))
-        props.dispatch(props.getPosts(`https://dummyapi.io/data/api/user/${id}/post`))
+        let id 
+        if(window.location.href){
+            id = window.location.href.split('/').pop()
+            doBeforeGetId(id)
+        }else{
+            id = document.location.href.split('/').pop()
+            doBeforeGetId(id)
+        }
     },[])
     return (
             <div className="container-page-show">
-                <Nav />
                 <div className="container-show-data">
                     <div className="container-user-data">
                         <div className="container-scroll scroll-show">
@@ -33,10 +36,12 @@ const Show = (props) => {
                                     />
                                     {props.postsUser.loading==false?
                                         <div className="container-pots">  
-                                            {props.postsUser.pots.map((pots)=>
+                                            {props.postsUser.pots.map((pots,i)=>
+                                            <a href={`/User/${props.idUser}/Comments/${pots.id}`} className="link-comments" key={i}>
                                                 <Pots
                                                 pots={pots}
-                                                />                                        
+                                                />                  
+                                            </a>                          
                                             )}
                                         </div>
                                     :
@@ -61,7 +66,8 @@ const Show = (props) => {
 const MapStateToProps = (state)=>{
     return{
         userShow:state.userShow,
-        postsUser:state.postsUser
+        postsUser:state.postsUser,
+        idUser:state.idUser
     }
 }
 
@@ -70,7 +76,7 @@ const MapDispatchToProps = (dispatch) => {
         dispatch,
         getShowUser,
         getPosts,
+        getIdUser
     }
 }
-export default connect(MapStateToProps,MapDispatchToProps)(Show)        /*
-*/
+export default connect(MapStateToProps,MapDispatchToProps)(Show)       

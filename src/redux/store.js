@@ -5,14 +5,17 @@ import showMenu from './reducers/menuReducer';
 import userShow from './reducers/showUserReducer';
 import postsUser from './reducers/postsReducer';
 import commentsUser from './reducers/commentsReducer';
+import idUser from './reducers/idUserReducer'
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 const reducer = combineReducers({
+      
     userIndex,
     showMenu,
     userShow,
     postsUser,
-    commentsUser
+    commentsUser,
+    idUser
 })
 
 const store = createStore(

@@ -1,12 +1,12 @@
 import {GET_POST_REQUEST,
         GET_POST_SUCCES,
         GET_POST_ERROR  } from '../action/pots/type';
-const stateDefault = {
+const STATEDEFAULT = {
     loading:true,
     pots:[],
     error:''
 }
-const reducer = (state=stateDefault,{type,payload}) =>{
+const reducer = (state=STATEDEFAULT,{type,payload}) =>{
     switch (type) {
         case GET_POST_REQUEST:
             return{
