@@ -1,5 +1,6 @@
 import React from 'react';
-import './pots.scss'
+import './pots.scss';
+import moment from 'moment';
 const Pots = (props) => {
     return(
         <div className="pots">
@@ -9,7 +10,7 @@ const Pots = (props) => {
 
 
             <div className="data-pots">
-                <p className="data-pots text-data">date:{props.pots.publishDate}</p>
+                <p className="data-pots text-data">date:{moment(props.pots.publishDate,'DD-MM-YYYY').format('L')}</p>
                 <br/>
                 <p className="data-pots text-data">Description:{props.pots.text}</p>
                 <p className="data-pots">likes: {props.pots.likes}</p>

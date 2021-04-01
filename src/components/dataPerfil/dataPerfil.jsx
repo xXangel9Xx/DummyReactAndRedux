@@ -1,5 +1,6 @@
 import React from 'react';
 import './dataPerfil.scss';
+import moment from 'moment';
 const DataPerfil = (props) => {
     return(
         <div className="container-data-perfil">
@@ -12,8 +13,8 @@ const DataPerfil = (props) => {
                 <p className="details">Email: {props.user.email}</p>
                 <p className="details">Title: {props.user.title}</p>
                 <p className="details">Phone: {props.user.phone}</p>
-                <p className="details">Register: {props.user.registerDate}</p>
-                <p className="details">Date of Birth: {props.user.dateOfBirth}</p>
+                <p className="details">Register: {moment(props.user.registerDate,'DD-MM-YYYY').format('L')}</p>
+                <p className="details">Date of Birth: {moment(props.user.dateOfBirth,'DD-MM-YYYY').format('L')}</p>
             </div>
         </div>
     )
