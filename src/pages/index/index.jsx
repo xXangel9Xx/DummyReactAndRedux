@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Letters from '../../components/letters/letters';
 import Loading from '../../components/loading/loading';
+import Pagination from '../../components/pagination/pagination';
 import getUserIndex from '../../redux/action/getUsers/getUsersIndexAction'
 import './index.scss'
 const Index = (props) =>{
@@ -23,6 +24,7 @@ const Index = (props) =>{
                         ):
                         <Loading />}
                     </div>
+                    <Pagination />
                 </div>
             </div>
         </div>

@@ -6,16 +6,17 @@ import userShow from './reducers/showUserReducer';
 import postsUser from './reducers/postsReducer';
 import commentsUser from './reducers/commentsReducer';
 import idUser from './reducers/idUserReducer'
+import pagination from './reducers/paginationReducer'
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 const reducer = combineReducers({
-      
     userIndex,
     showMenu,
     userShow,
     postsUser,
     commentsUser,
-    idUser
+    idUser,
+    pagination
 })
 
 const store = createStore(

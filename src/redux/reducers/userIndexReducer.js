@@ -12,7 +12,8 @@ const reducer = (state=STATEDEFAULT,{type,payload}) => {
     switch (type) {
         case GET_USERINDEX_REQUEST:
             return{
-                ...state,
+                ...state,            
+                loading:true
             }
         case GET_USERSINDEX_SUCCES:
             return{
