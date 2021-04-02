@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './pagination.scss';
-import {setPaginationIncrement,
-        setPaginationDecrement} from '../../redux/action/pagination/paginationAction';
 import getIndex from '../../redux/action/getUsers/getUsersIndexAction';
 import changeColorPagination from '../../pages/index/utils/changeColorPagination'
 import ArrowRight from './arrowRight/arrowRight';
@@ -24,7 +22,8 @@ const Pagination = (props) => {
                     </li>
                     <li className="li-index"
                         value={1} 
-                        onClick={(e)=>{props.dispatch(props.getIndex(`https://dummyapi.io/data/api/user?page=${props.pagination.positionTwo}&limit=10`))
+                        onClick={(e)=>{
+                        props.dispatch(props.getIndex(`https://dummyapi.io/data/api/user?page=${props.pagination.positionTwo}&limit=10`))
                         changeColorPagination('li-index','id-look-out',1)
                 }}>
                         {props.pagination.positionTwo}
@@ -52,8 +51,6 @@ const MapStateToProps = (state)=> {
 }
 const MapDispatchToProps = (dispatch)=> {
     return {
-        setPaginationIncrement,
-        setPaginationDecrement,
         getIndex,
         dispatch
     }

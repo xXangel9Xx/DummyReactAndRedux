@@ -10,17 +10,19 @@ const reducer = (state=STATEDEFAULT,{type,payload}) => {
     switch (type) {
         case INCREMENT_PAGINATION:
                 if(position.positionThree<900){
-                    position.positionOne+=1
-                    position.positionTwo+=1
-                    position.positionThree+=1
-                    return position
+                    return {
+                        positionOne:position.positionOne+=1,
+                        positionTwo:position.positionTwo+=1,
+                        positionThree:position.positionThree+=1
+                       }
                 }else{return position}
         case DECREMENT_PAGINATION:   
                 if(position.positionOne>1){
-                    position.positionOne-=1
-                    position.positionTwo-=1
-                    position.positionThree-=1
-                    return position
+                    return {
+                        positionOne:position.positionOne-=1,
+                        positionTwo:position.positionTwo-=1,
+                        positionThree:position.positionThree-=1
+                       }
                 }else{return position}
         default: return state
     }
