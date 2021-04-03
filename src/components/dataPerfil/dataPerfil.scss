@@ -1,5 +1,10 @@
 @import '../../master';
 @media screen and (min-width:300px){
+    .container-data-perfil{
+        width: 230px;
+        margin: auto;
+    }    
+
     .container-image-perfil{
         display: flex;
         justify-content: center;
@@ -12,10 +17,7 @@
         background: rgb(226,226,226);
         background: radial-gradient(circle, rgba(226,226,226,1) 0%, rgba(255,255,255,1) 100%);
     }
-    .container-data-perfil{
-        width: 230px;
-        margin: auto;
-    }
+
     .details{
         word-break: break-all;
     }

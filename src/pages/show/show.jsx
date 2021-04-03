@@ -1,5 +1,6 @@
 import React, { useEffect} from 'react';
 import './show.scss';
+import Loading from '../../assets/509258_fb107.gif'
 import DataPerfil from '../../components/dataPerfil/dataPerfil';
 import Pots from '../../components/pots/pots';
 import { connect } from 'react-redux';
@@ -46,14 +47,14 @@ const Show = (props) => {
                                         </div>
                                     :
                                         <div className="container-loading">
-
+                                            <img src={Loading} alt=""/>
                                         </div>
                                     }                                
                                 </>
                                     :
                                     
                                     <div className="container-loading">
-
+                                            <img src={Loading} alt=""/>
                                     </div>
                                 }
                         </div>

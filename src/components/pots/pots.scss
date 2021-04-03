@@ -8,6 +8,10 @@
         background: rgb(226,226,226);
         background: radial-gradient(circle, rgba(226,226,226,1) 0%, rgba(255,255,255,1) 100%);
     }
+    .pots:hover{
+        width: 240px;
+        transition: all 1s;
+    }
     .container-image-pots{
         display: flex;
         justify-content: center;

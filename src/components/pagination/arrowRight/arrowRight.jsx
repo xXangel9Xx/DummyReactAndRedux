@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './arrowRight.scss';
 import {setPaginationIncrement} from '../../../redux/action/pagination/paginationAction'
-
+import getIndex from '../../../redux/action/getUsers/getUsersIndexAction'
 const ArrowRight = (props) => {
-    function shangeColorIndexPagination(classNameLi,idNameLi){
+ async   function shangeColorIndexPagination(classNameLi,idNameLi){
         let divsLi = document.getElementsByClassName(classNameLi)
         let idLi = document.getElementById(idNameLi)
         let index = idLi.value
@@ -16,9 +16,11 @@ const ArrowRight = (props) => {
             idLi.removeAttribute("id")
             divsLi[index].setAttribute("id",idNameLi)
         }
-        //parseInt(divsLi[index].textContent)
-
-        
+       
+        await setTimeout(() => {
+            props.dispatch(props.getIndex(`https://dummyapi.io/data/api/user?page=${parseInt(divsLi[index].textContent)}&limit=10`))
+        }, 100);
+     //   props.dispatch(props.getIndex(`https://dummyapi.io/data/api/user?page=${parseInt(divsLi[index].textContent)}}&limit=10`))     
     }
     return( 
         <div className="container-arrow-right" onClick={(e)=>{shangeColorIndexPagination(props.classNameLiIndex,props.idNameLiIndex)}}>
@@ -35,6 +37,7 @@ const MapStateToProps = (state)=>{
 const MapDispatchToProps = (dispatch) => {
     return {
         setPaginationIncrement,
+        getIndex,
         dispatch
     }
 }
