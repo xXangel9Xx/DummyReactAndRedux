@@ -2,7 +2,9 @@ import axios from 'axios'
 import { APP_ID } from '../../../app-id/appId'
 import {GET_POST_REQUEST,
         GET_POST_SUCCES,
-        GET_POST_ERROR  } from './type'
+        GET_POST_ERROR,
+        SEARCH_POST,
+        LIKE} from './type'
 
 const postRequest = () => {
     return{
@@ -21,7 +23,7 @@ const postError = (payload) =>{
         payload:payload
     }
 }
-const getPosts = (url) => {
+export const getPosts = (url) => {
         return(dispatch)=>{
             dispatch(postRequest())
             axios.get(url,{headers:{'app-id':APP_ID}}).then((res)=>{
@@ -32,4 +34,11 @@ const getPosts = (url) => {
             })
         }
 }
-export default getPosts
+
+
+export const likes = (id) => {
+    return{
+        type:LIKE,
+        payload:id
+    }
+}

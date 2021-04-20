@@ -1,6 +1,8 @@
 import {GET_POST_REQUEST,
         GET_POST_SUCCES,
-        GET_POST_ERROR  } from '../action/pots/type';
+        GET_POST_ERROR,
+        LIKE
+    } from '../action/pots/type';
 const STATEDEFAULT = {
     loading:true,
     pots:[],
@@ -24,6 +26,17 @@ const reducer = (state=STATEDEFAULT,{type,payload}) =>{
                 pots:[],
                 error:payload
             }
+        case LIKE:
+            let pots = state
+            pots.pots[payload]={
+                ...pots.pots[payload],
+                likes: pots.pots[payload].likes+=1
+            }
+            
+            return{
+                ...pots
+            }
+       
         default:return state
     }
 }

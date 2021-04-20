@@ -6,7 +6,7 @@ import Pots from '../../components/pots/pots';
 import { connect } from 'react-redux';
 //REDUX FUNCTIONS ACTION
 import getShowUser from '../../redux/action/getShowUser/showUserAction';
-import getPosts from '../../redux/action/pots/potsAction';
+import {getPosts} from '../../redux/action/pots/potsAction';
 import getIdUser from '../../redux/action/idUser/idUserAction'
 
 const Show = (props) => {
@@ -38,11 +38,13 @@ const Show = (props) => {
                                     {props.postsUser.loading==false?
                                         <div className="container-pots">  
                                             {props.postsUser.pots.map((pots,i)=>
-                                            <a href={`/User/${props.idUser}/Comments/${pots.id}`} className="link-comments" key={i}>
+                                            
                                                 <Pots
                                                 pots={pots}
+                                                id={i}
+                                                key={i}
                                                 />                  
-                                            </a>                          
+                                                          
                                             )}
                                         </div>
                                     :
