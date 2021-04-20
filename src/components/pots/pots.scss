@@ -1,0 +1,32 @@
+@media screen and (min-width:300px){
+    .pots{
+        margin-top: 20px;
+        width: 230px;
+        padding: 5px;
+        border-radius: 8px;
+        border-style: outset;
+        background: rgb(226,226,226);
+        background: radial-gradient(circle, rgba(226,226,226,1) 0%, rgba(255,255,255,1) 100%);
+    }
+    .pots:hover{
+        width: 240px;
+        transition: all 1s;
+    }
+    .container-image-pots{
+        display: flex;
+        justify-content: center;
+    }
+    .image-pots{
+        width: 200px;
+        height: 150px;
+    }
+    .text-data{
+        text-align: center;
+    }
+
+}
+@media screen and (min-width:600px){
+    .pots{
+        margin-right: 10px;
+    }
+}

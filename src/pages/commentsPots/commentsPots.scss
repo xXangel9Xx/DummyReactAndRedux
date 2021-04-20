@@ -1,0 +1,30 @@
+@import '../../master';
+@media screen and (min-width:300px){
+    .container-page-comments{
+        width: 100vw;
+        height: 90vh;
+        background: $color-pages;
+        background:$color-pages-linear-gradient;
+        
+    }
+    .container-index-comments{
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        padding-top: 5vh;
+    }
+    .container-pots-comments{
+        width: 80vw;
+        height: 80vh;
+        background: $background-container;
+        box-shadow: $box-shadow-container;
+        border-radius: $border-radius;
+        overflow: hidden;
+    }
+    .container-comments{
+        width: inherit;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

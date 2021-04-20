@@ -1,0 +1,13 @@
+@import './master';
+@media screen and (min-width:300px){
+  .App{
+    width: 100vw;
+    height: 100vh;
+    background: $color-pages;
+    background:$color-pages-linear-gradient;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+  }
+}
